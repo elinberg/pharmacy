@@ -15,12 +15,16 @@ Sqlite
 
 ## Install Instructions:
 git clone https://github.com/elinberg/pharmacy.git
+
 cd pharmacy
+
 composer update
+
 php artisan migrate:refresh --seed
+
 php artisan serve
 
-# Files of interest
+## Files of interest
 ##Controller
 app/Http/Controllers/PharmacyController.php
 ## Model
