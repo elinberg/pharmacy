@@ -10,7 +10,9 @@ http://localhost:8000/api/pharmacy/38.9115038/-94.7894597/5
 
 ## Requirements
 php 5.6.18
+
 Composer
+
 Sqlite
 
 ## Install Instructions:
