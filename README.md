@@ -1,6 +1,7 @@
 # Laravel Pharmacy Finder application
 
-Application that gets your current Geolocation and finds the 5 nearest Pharmacies via REST Api
+Application that gets your current Geolocation and finds the 5 nearest Pharmacies via REST Api. The default database is set to sqlite however
+the migrations have also been tested with mysql 5.6
 
 Home Page:
 http://localhost:8000
@@ -13,7 +14,7 @@ php 5.6.18
 
 Composer
 
-Sqlite
+Sqlite or Mysql
 
 ## Install Instructions:
 git clone https://github.com/elinberg/pharmacy.git

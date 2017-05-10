@@ -117,9 +117,7 @@ function showPosition(position) {
 $('#lat').html(position.coords.latitude); 
 $('#long').html(position.coords.longitude); 
 latlon=position.coords.latitude+','+position.coords.longitude
-var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=500x400&sensor=false&key=AIzaSyBzjsipXyspoNGmLGuzja-9_Qzao_wcp4k";
 
-    document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
     $.ajax({
         type: "GET",
         url: "/api/pharmacy/"+$('#lat').html()+'/'+$('#long').html()+'/5',
@@ -133,11 +131,15 @@ var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&
             $(data).each(function(idx,pharmacy){
 
                 first = (idx==0) ? 'bold' : '';
-                content += '<li class="'+first+'">'+pharmacy.name+ ' '+ pharmacy.address+ ' '+ pharmacy.city+ ' '+ pharmacy.state+ ' '+ pharmacy.zip+  ' (Distance '+pharmacy.distance+') '+
+                content += '<li data="'+pharmacy.lat+','+pharmacy.long+'" class="'+first+'">'+pharmacy.name+ ' '+ pharmacy.address+ ' '+ pharmacy.city+ ' '+ pharmacy.state+ ' '+ pharmacy.zip+  ' (Distance '+pharmacy.distance+') '+
                 '</li>';
             });
             content+='</ul>';
             $('#pharmacies').html(content);
+            ll = $('.bold').attr('data');
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+ll+"&zoom=14&size=500x400&sensor=false&key=AIzaSyBzjsipXyspoNGmLGuzja-9_Qzao_wcp4k";
+
+            document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
             
         },
         failure: function(errMsg) {
