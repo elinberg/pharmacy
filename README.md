@@ -28,7 +28,7 @@ php artisan migrate:refresh --seed
 php artisan serve
 
 ## Files of interest
-##Controller
+## Controller
 app/Http/Controllers/PharmacyController.php
 ## Model
 app/Pharmacy.php
