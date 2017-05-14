@@ -40,3 +40,17 @@ database/migrations/2017_05_07_035201_create_pharmacies.php
 database/seeds/PharmaciesTableSeeder.php
 pharmacy/public/csv/pharmacies.csv
 
+## Changelog
+refactored PharmacyController and moved code into Pharmacy Model getNearestPharmacy
+created distance function in MySQL, to calculate distance from origin lat/long to the
+point values create on insert
+utilized mysql 5.7 Geo-Spacial features
+added spacial index on point column
+updated seed process to create `point` column on insert
+simplified the response from Google and sorted associative array by the meter element
+added comment headers to methods
+sqlite is no longer an option
+
+#todo
+A stored procedure might be faster then the function
+There is something called the sphinx server that claims to make these calculations lightning fast

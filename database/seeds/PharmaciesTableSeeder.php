@@ -29,6 +29,7 @@ class PharmaciesTableSeeder extends Seeder
                     'zip' => trim($row[4]),
                     'latitude' => trim($row[5]),
                     'longitude' => trim($row[6]),
+                    'point' => DB::raw("POINT(".$row[5].','.$row[6].")"),
                 )
             );
         }
